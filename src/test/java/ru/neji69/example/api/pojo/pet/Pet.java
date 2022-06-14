@@ -4,6 +4,9 @@ import java.util.List;
 
 public class Pet {
 
+    public Pet() {
+    }
+
     public Pet(Integer id, Category category, String name, List<String> photoUrls, List<Tag> tags, Status status) {
         this.id = id;
         this.category = category;
@@ -20,6 +23,22 @@ public class Pet {
     private List<Tag> tags;
     private Status status;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet)) return false;
+
+        Pet pet = (Pet) o;
+
+        if (getId() != null ? !getId().equals(pet.getId()) : pet.getId() != null) return false;
+        if (getCategory() != null ? !getCategory().equals(pet.getCategory()) : pet.getCategory() != null) return false;
+        if (getName() != null ? !getName().equals(pet.getName()) : pet.getName() != null) return false;
+        if (getPhotoUrls() != null ? !getPhotoUrls().equals(pet.getPhotoUrls()) : pet.getPhotoUrls() != null)
+            return false;
+        if (getTags() != null ? !getTags().equals(pet.getTags()) : pet.getTags() != null) return false;
+        return getStatus() == pet.getStatus();
+    }
+
     public Integer getId() {
         return id;
     }
@@ -27,6 +46,7 @@ public class Pet {
     public void setId(Integer id) {
         this.id = id;
     }
+
 
     public Category getCategory() {
         return category;
@@ -36,6 +56,7 @@ public class Pet {
         this.category = category;
     }
 
+
     public String getName() {
         return name;
     }
@@ -43,6 +64,7 @@ public class Pet {
     public void setName(String name) {
         this.name = name;
     }
+
 
     public List<String> getPhotoUrls() {
         return photoUrls;
@@ -52,6 +74,7 @@ public class Pet {
         this.photoUrls = photoUrls;
     }
 
+
     public List<Tag> getTags() {
         return tags;
     }
@@ -60,6 +83,7 @@ public class Pet {
         this.tags = tags;
     }
 
+
     public Status getStatus() {
         return status;
     }
@@ -67,6 +91,8 @@ public class Pet {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+
 }
 
 

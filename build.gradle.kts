@@ -32,6 +32,7 @@ dependencies {
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.36")
 
     testImplementation("io.rest-assured:rest-assured:4.4.0")
+    testImplementation("io.rest-assured:json-schema-validator:4.4.0")
     testImplementation("com.google.code.gson:gson:2.9.0")
     testImplementation("org.assertj:assertj-core:3.22.0")
     testImplementation("com.codeborne:selenide:6.5.1")
