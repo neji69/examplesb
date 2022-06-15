@@ -39,6 +39,11 @@ dependencies {
     testImplementation("org.postgresql:postgresql:42.4.0")
 }
 
+
+tasks.withType(JavaCompile::class) {
+    options.encoding = "UTF-8"
+}
+
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
