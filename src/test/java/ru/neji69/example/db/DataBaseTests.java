@@ -10,13 +10,15 @@ import java.util.List;
 
 public class DataBaseTests {
 
+    public static final String jdbcURL = "jdbc:postgresql://localhost:5432/demo";
+    public static final String username = "postgres";
+    public static final String password = "1";
+
     Connection connection;
 
     @Test
     void dataBaseTest() throws SQLException {
-        String jdbcURL = "jdbc:postgresql://localhost:5432/demo";
-        String username = "postgres";
-        String password = "1";
+
 
         List<String> actualResultList = new ArrayList<>();
 
@@ -68,8 +70,62 @@ public class DataBaseTests {
     }
 
     @Test
-    void dataBaseTest2(){
+    void dataBaseTest2() {
 
+
+        List<String> actualResultList = new ArrayList<>();
+
+        List<String> expectedDataList = new ArrayList<>();
+        expectedDataList.add("Airbus A319-100");
+        expectedDataList.add("Airbus A320-200");
+        expectedDataList.add("Airbus A321-200");
+        expectedDataList.add("Boeing 737-300");
+        expectedDataList.add("Ульяновск-ВосточныйУльяновск");
+        expectedDataList.add("Ульяновск-ВосточныйУльяновск");
+        expectedDataList.add("Ульяновск-ВосточныйУльяновск");
+
+        String sql = "SELECT   a.model,\n" +
+                "         string_agg (s2.fare_conditions || '(' || s2.num::text || ')',\n" +
+                "                     ', ') as fare_conditions\n" +
+                "FROM     (\n" +
+                "          SELECT   s.aircraft_code, s.fare_conditions, count(*) as num\n" +
+                "          FROM     bookings.seats s\n" +
+                "          GROUP BY s.aircraft_code, s.fare_conditions\n" +
+                "          ORDER BY s.aircraft_code, s.fare_conditions\n" +
+                "         ) s2\n" +
+                "         join bookings.aircrafts a ON  s2.aircraft_code = a.aircraft_code \n" +
+                "GROUP BY a.model\n" +
+                "Having count(s2.fare_conditions) > 1";
+
+        try {
+            connection = DriverManager.getConnection(jdbcURL, username, password);
+            System.out.println("Connect to PostgeSQL Server");
+        } catch (SQLException e) {
+
+            System.out.println("dont worry , it easy stupid program");
+            e.printStackTrace();
+        }
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+
+
+            while (resultSet.next()) {
+                String model = resultSet.getString("model");
+//                actualResultList.add(airportName + city);
+            }
+        } catch (SQLException exception) {
+//            connection.close();
+        }
+
+        Collections.sort(actualResultList);
+        Collections.sort(expectedDataList);
+        Assertions.assertThat(actualResultList.size()).isEqualTo(expectedDataList.size());
+        Assertions.assertThat(actualResultList).isEqualTo(expectedDataList);
     }
+
+
 }
+
 
