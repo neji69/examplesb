@@ -13,14 +13,14 @@ public class PerfomanceLabTests {
             "что открылась форма для заполнения контактов")
     void clickAndContactFormOpensTest(){
 
-//        open("https://www.performance-lab.ru/");
+        open("https://www.performance-lab.ru/");
 //        System.out.println();
 
-        open("https://www.performance-lab.ru/");
-        System.out.println();
-        $("div[data-gr=\"popup-container\"]")
-                .shouldBe(Condition.hidden);
-        executeJavaScript("arguments[0].remove()", $("div[data-gr=\"popup-container\"]"));
+//        open("https://www.performance-lab.ru/");
+//        System.out.println();
+//        $("div[data-gr=\"popup-container\"]")
+//                .shouldBe(Condition.hidden);
+//        executeJavaScript("arguments[0].remove()", $("div[data-gr=\"popup-container\"]"));
 
 
     }

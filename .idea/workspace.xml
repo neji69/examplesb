@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3b62e1d-e37a-4262-9a7a-824679d8cb21" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/datapet.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/petschema.json" afterDir="false" />
+    <list default="true" id="f3b62e1d-e37a-4262-9a7a-824679d8cb21" name="Changes" comment="dev ver 0.011">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/db/DataBaseTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/ApiTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/ApiTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/api/pojo/pet/Tag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/neji69/example/PerfomanceLabTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/neji69/example/PerfomanceLabTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +73,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -85,24 +81,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\JavaHomeProject\examplesb\src\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ApiTests">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.PerfomanceLabTests.clickAndContactFormOpensTest">
     <configuration name="ApiTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -166,20 +152,39 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PerfomanceLabTests.clickAndContactFormOpensTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DataBaseTests.dataBaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="--tests &quot;ru.neji69.example.db.DataBaseTests.dataBaseTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.neji69.example.PerfomanceLabTests.clickAndContactFormOpensTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PerfomanceLabTests.clickAndContactFormOpensTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ru.neji69.example.PerfomanceLabTests.clickAndContactFormOpensTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -191,10 +196,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PerfomanceLabTests.clickAndContactFormOpensTest" />
+        <item itemvalue="Gradle.DataBaseTests.dataBaseTest" />
         <item itemvalue="Gradle.ApiTests" />
         <item itemvalue="Gradle.ApiTests.getPetByIdTest" />
         <item itemvalue="Gradle.ApiTests.postPetTest" />
-        <item itemvalue="Gradle.PerfomanceLabTests.clickAndContactFormOpensTest" />
       </list>
     </recent_temporary>
   </component>
@@ -209,8 +215,18 @@
       <workItem from="1654871396569" duration="2655000" />
       <workItem from="1655199452144" duration="1853000" />
       <workItem from="1655208615349" duration="988000" />
-      <workItem from="1655216900271" duration="17198000" />
+      <workItem from="1655216900271" duration="18006000" />
+      <workItem from="1655247601064" duration="11321000" />
+      <workItem from="1655288634422" duration="401000" />
     </task>
+    <task id="LOCAL-00001" summary="dev ver 0.011">
+      <created>1655243947108</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655243947108</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +244,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dev ver 0.011" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev ver 0.011" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -240,6 +260,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/ru/neji69/example/api/ApiTests.java</url>
           <line>76</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/neji69/example/db/DataBaseTests.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

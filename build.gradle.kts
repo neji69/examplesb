@@ -36,6 +36,7 @@ dependencies {
     testImplementation("com.google.code.gson:gson:2.9.0")
     testImplementation("org.assertj:assertj-core:3.22.0")
     testImplementation("com.codeborne:selenide:6.5.1")
+    testImplementation("org.postgresql:postgresql:42.4.0")
 }
 
 tasks.getByName<Test>("test") {
